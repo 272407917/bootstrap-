@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--可以让网页的宽度自动适应手机屏幕的宽度,shrink-to-fit=no为了适应IOS9-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>bootstrap栅格系统</title>
+    <!--bootstrap样式-->
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+
+    <style>
+        .container{
+            background-color: pink;
+            height: 200px;
+        }
+        /*
+            .container>div:container下的所有div子元素（不包括孙子元素）
+            :nth-child(n)：当前元素下的第几个子元素
+        */
+        .container>div>div:nth-child(1){
+            background-color: red;
+        }
+
+        .container>div>div:nth-child(2){
+            background-color: yellow;
+        }
+
+        .container>div>div:nth-child(3){
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        栅格系统，是一个行列结构，每一行row中有12列col，并且页面内容只有写在列中才是合法的
+        每一列都可以单独设置档次的
+        超小屏幕：.col
+          小屏幕：.col-sm
+          中屏幕：.col-md
+          大屏幕：.col-lg
+        超大屏幕：.col-xl
+    -->
+
+    <!--col超小屏，五个档次都是平分12列-->
+    <!--
+    <div class="container">
+        <div class="row">
+            <div class="col">第一部分</div>
+            <div class="col">第二部分</div>
+            <div class="col">第三部分</div>
+        </div>
+    </div>
+    -->
+
+    <!--.col-sm小屏幕，在超小屏幕时，三个div会分别占满一行-->
+    <!--
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2">第一部分</div>
+            <div class="col-sm-8">第二部分</div>
+            <div class="col-sm-2">第三部分</div>
+        </div>
+    </div>
+    -->
+
+    <!--小屏幕和大屏幕分别控制，中屏幕使用小屏幕标准，超大屏幕使用大屏幕标准，超小屏幕三部分各占一行-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-lg-4">第一部分</div>
+            <div class="col-sm-8 col-lg-4">第二部分</div>
+            <div class="col-sm-2 col-lg-4">第三部分</div>
+        </div>
+    </div>
+
+<!--bootstrap引用资料-->
+<script src="lib/js/jquery-3.5.1.min.js"></script>
+<script src="lib/js/popper.min.js"></script>
+<script src="lib/js/bootstrap.js"></script>
+</body>
+</html>
