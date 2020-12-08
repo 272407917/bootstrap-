@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <!--可以让网页的宽度自动适应手机屏幕的宽度,shrink-to-fit=no为了适应IOS9-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>bootstrap模态框</title>
+    <!--bootstrap引用资料-->
+    <script src="lib/js/jquery-3.5.1.min.js"></script>
+    <script src="lib/js/popper.min.js"></script>
+    <script src="lib/js/bootstrap.js"></script>
+    <!--bootstrap样式-->
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+
+    <script>
+        $(function () {
+            $("#saveBtn").click(function () {
+                $("#myForm").submit()
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-success" data-toggle="modal" data-target="#exampleModal">
+        模态框
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">信息录入</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="myForm" action="bootstrap模态框.html" method="post">
+                        <label for="name">用户名</label>
+                        <input type="text" id="name" name="username">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    <button type="button" id="saveBtn" class="btn btn-primary btn-success">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
